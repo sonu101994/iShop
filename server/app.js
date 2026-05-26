@@ -31,12 +31,28 @@ app.use(
 
 // app.use(express.static("public"));
 app.use(express.static(path.join(__dirname,"public")));
-app.use(cors(
-    {
-       origin:process.env.CLIENT_URL,
-        credentials: true
-    }
-));
+
+// cors setup
+
+const allowedOrigins = [
+    "http://localhost:3000",
+    process.env.CLIENT_URL,
+].filter(Boolean);
+
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 
 // testing api
 app.get("/", (req, res) => {
