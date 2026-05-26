@@ -34,7 +34,6 @@ app.use(express.static(path.join(__dirname,"public")));
 
 // cors setup
 
-const cors = require("cors");
 
 app.use(
     cors({
