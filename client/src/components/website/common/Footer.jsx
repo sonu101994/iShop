@@ -65,7 +65,7 @@ export default function Footer() {
 
                 {/* bottom line footer  */}
                 <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
-                    © {year} iShop. All rights reserved.
+                    © {year} iShop| Designed & Built by Bhawani Singh 
                 </div>
             </div>
         </footer>
