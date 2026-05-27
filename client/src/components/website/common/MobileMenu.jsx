@@ -32,11 +32,13 @@ export default function MobileMenu({ open, user, token, adminToken, closeMenu, h
                     Wishlist
                 </Link>
                 {/* admin link if admin token */}
-                {adminToken && (
+                {adminToken ? (
                     <Link href="/admin" onClick={closeMenu} className="rounded-xl px-3 py-3 font-medium text-slate-700 hover:bg-slate-50">
-                        Admin dashboard
+                        Admin Panel
                     </Link>
-                )}
+                ): <Link href="/admin/login" onClick={closeMenu} className="rounded-xl px-3 py-3 font-medium text-slate-700 hover:bg-slate-50">
+                        Admin Login
+                    </Link>}
                 {/* account pages only for logged in */}
                 {token && (
                     <>
