@@ -9,7 +9,7 @@ I built this project to keep the shopping experience simple for users while givi
 ## Links
 
 - **GitHub Repository:** `https://github.com/sonu101994`
-- **Live Demo:** ``
+- **Live Demo:** `https://i-shop-8k1t.vercel.app`
 
 
 ---
