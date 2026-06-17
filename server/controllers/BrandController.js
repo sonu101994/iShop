@@ -14,13 +14,13 @@ const getBrands = async (req, res) => {
         if (query.slug) {
             filter.slug = query.slug;
         }
-        if (query.status) {
+        if (query.status!==undefined) {
             filter.status = query.status == "true";
         }
 
         if (query.category_id) {
             filter["category_ids"] = {
-                $in: query.category_id,
+                $in: [query.category_id],
             };
         }
         if (
@@ -113,7 +113,7 @@ const deleteBrand = async (req, res) => {
         if (brand.image_name) {
             const imagePath = path.join(
             __dirname,
-            "../public/images/brands/",
+            "../public/images/brand/",
             brand.image_name);
             if (fs.existsSync(imagePath)) {
                 fs.unlinkSync(imagePath);
@@ -191,9 +191,9 @@ const updateBrand = async (req, res) => {
             // delete old image
             if (brand.image_name) {
 
-                const oldPath = path.join(
+                const oldImagePath = path.join(
                     __dirname,
-                    "../public/images/brands/",
+                    "../public/images/brand/",
                     brand.image_name
                 );
 
