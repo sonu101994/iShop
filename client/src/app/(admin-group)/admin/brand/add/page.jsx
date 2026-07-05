@@ -21,7 +21,7 @@ export default function addBrandPage() {
     const fetchCategories = async () => {
 
         const { categories } = await getCategory();
-        console.log(categories);
+        // console.log(categories);
         setCategories(categories);
     }
     useEffect(() => {
@@ -77,7 +77,7 @@ export default function addBrandPage() {
                 "category_ids", JSON.stringify(selectedCategories)
             );
             const response = await apiClient.post("/brand/create", formData, getAuthHeader());
-            console.log(response.data);
+            // console.log(response.data);
             if (response.data.flag === 1) {
                 toast.success(response.data.msg);
                 e.target.reset();
@@ -89,7 +89,7 @@ export default function addBrandPage() {
                 if (slugRef.current) slugRef.current.value = "";
 
             } else {
-                console.log("ha yhi ho rha h");
+                // console.log("ha yhi ho rha h");
                 toast.warning(response.data.msg);
             }
         } catch (error) {

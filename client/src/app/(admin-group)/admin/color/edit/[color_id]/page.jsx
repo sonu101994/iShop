@@ -36,7 +36,7 @@ export default function EditColorPage() {
         setColor(data.color_code || "#ff0000");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("Failed to load color");
     } finally {
       setLoading(false);

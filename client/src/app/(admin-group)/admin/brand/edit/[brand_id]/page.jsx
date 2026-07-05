@@ -24,7 +24,7 @@ export default function EditBrandPage() {
     const [selectedCategories, setSelectedCategories] = useState([]);
 
     const [preview, setPreview] = useState(null);
-
+    
     const [fileName, setFileName] = useState("");
 
     const nameRef = useRef(null);
@@ -37,12 +37,11 @@ export default function EditBrandPage() {
             id: params.brand_id,
         });
 
-        console.log("brand", brands);
+        // console.log("brand", brands);
 
         if (brands?.length > 0) {
 
             const brand = brands[0];
-
             setData({
                 brands: brand,
                 imageUrl: image_path,

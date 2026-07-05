@@ -23,6 +23,7 @@ export const getCategory = async (query_object = null) => {
                 categories: response.data.categories || [],
                 image_path: response.data.image_path || "",
             };
+            
         }
 
         return { categories: [], image_path: "" };

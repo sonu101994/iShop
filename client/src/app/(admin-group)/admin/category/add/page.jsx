@@ -25,7 +25,6 @@ export default function AddCategoryPage(){
             setPreview(URL.createObjectURL(file));
             setFileName(file.name);
         }
-
     };
 
     // remove selected image
@@ -136,7 +135,7 @@ export default function AddCategoryPage(){
               htmlFor="name"
               className="mb-2 block text-sm font-medium text-gray-700"
             >
-              Category Name <span className="text-red-500">*</span>
+*             Category Name <span className="text-red-500">*</span>
             </label>
 
             <input
@@ -148,7 +147,6 @@ export default function AddCategoryPage(){
               placeholder="e.g., Electronics, Clothing, Books"
               className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-slate-900/10 text-slate-900"
             />
-
           </div>
 
           {/* Slug */}
@@ -172,7 +170,7 @@ export default function AddCategoryPage(){
 
           </div>
 
-          {/* image Upload */}
+       {/* image Upload */}
           <div>
 
             <label
@@ -190,14 +188,13 @@ export default function AddCategoryPage(){
                 name="image"
                 onChange={imagePreviewHandler}
                 className="hidden text-slate-900"
-              />
+          />
 
               {/* upload here */}
               <label
                 htmlFor="image"
                 className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 cursor-pointer rounded-lg border border-gray-300 px-4 py-3 hover:border-slate-900"
               >
-
                 <div className="flex items-center gap-3 overflow-hidden">
 
                   <svg
@@ -231,7 +228,7 @@ export default function AddCategoryPage(){
                       e.preventDefault();
                       e.stopPropagation();
                       removeImageHandler();
-                    }}
+                   }}
                     className="self-end sm:self-auto text-gray-400 hover:text-red-500"
                   >
 

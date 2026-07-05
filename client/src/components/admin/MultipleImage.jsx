@@ -23,7 +23,7 @@ export default function MultipleImage(
     // delete other images handler
 
     const deleteHandler = (idx) => {
-        apiClient.delete(delete_url + idx,getAuthHeader()).then(
+        apiClient.delete(delete_url + idx, getAuthHeader()).then(
             (response) => {
                 if (response.data.flag == 1) {
                     toast.success(response.data.msg);
@@ -39,8 +39,8 @@ export default function MultipleImage(
     }
 
     // upload image handler
-    const uploadHandler = async(e) => {
-        console.log("submit form");
+    const uploadHandler = async (e) => {
+        // console.log("submit form");
         e.preventDefault();
         const images = e.target.other_images.files;
         const formData = new FormData();
@@ -48,28 +48,28 @@ export default function MultipleImage(
         for (let img of images) {
             formData.append("other_images", img);
         }
-        console.log("API URL:", api_url);
-console.log("FORM DATA:", formData);
-console.log("FILES:", images);
+        // console.log("API URL:", api_url);
+        // console.log("FORM DATA:", formData);
+        // console.log("FILES:", images);
         setLoading(true);
-      const response= await apiClient.post(api_url, formData,getAuthHeader()
-            )
+        const response = await apiClient.post(api_url, formData, getAuthHeader()
+        )
             // console.log(response.data);
             .then(
-            (response) => {
-                if (response.data.flag == 1) {
-                    toast.success(response.data.msg);
-                    setOtherImages(response.data.current_other_images);
-                    e.target.reset();
-                    console.log("hii");
+                (response) => {
+                    if (response.data.flag == 1) {
+                        toast.success(response.data.msg);
+                        setOtherImages(response.data.current_other_images);
+                        e.target.reset();
+                        // console.log("hii");
+                    }
                 }
-            }
-        ).catch((error) => {
-            console.log(error);
-            toast.error(
-                error?.response?.data?.msg || "Something went wrong"
-            )
-        })
+            ).catch((error) => {
+                console.log(error);
+                toast.error(
+                    error?.response?.data?.msg || "Something went wrong"
+                )
+            })
             .finally(() => {
                 setLoading(false);
             })
@@ -118,7 +118,6 @@ console.log("FILES:", images);
                                                     <button onClick={() => deleteHandler(idx)}
                                                         className="w-full flex items-center justify-center gap-2 text-sm bg-red-50 text-red-600 hover:bg-red-100 px-3 py-2 rounded-lg transition">
                                                         <FaTrash size={14} />
-
                                                         Delete
                                                     </button>
                                                 </div>

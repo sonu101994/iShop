@@ -30,7 +30,7 @@ export default function EditCategoryPage() {
     const { categories, image_path } = await getCategory({
       id: params.category_id,
     });
-    console.log("category",categories);
+    // console.log("category",categories);
 
     setData({
       categories: categories[0],

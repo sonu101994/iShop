@@ -36,7 +36,6 @@ export default function ProductSettingsDropdown({ product, base_url }) {
 
     const toggleSetting = async (selected) => {
         if (!selected || updatingKey) return;
-
         try {
             setUpdatingKey(selected.key);
             const response = await apiClient.patch(`${base_url}/${product._id}/${selected.flag}`, {}, getAuthHeader());
@@ -48,7 +47,7 @@ export default function ProductSettingsDropdown({ product, base_url }) {
                 toast.warning(response.data.msg || "Could not update setting");
             }
         } catch (error) {
-            console.log("error", error.message);
+            // console.log("error", error.message);
             toast.error("Something went wrong!");
         } finally {
             setUpdatingKey("");

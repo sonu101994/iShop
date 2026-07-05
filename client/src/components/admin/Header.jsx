@@ -74,7 +74,7 @@ export default function Header() {
                     <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
                         <Link
                             href="/"
-                            className="hidden rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-gray-300 hover:bg-gray-50 md:inline-flex"
+                            className="hidden rounded-xl items-center justify-center border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-gray-300 hover:bg-gray-50 md:inline-flex"
                         >
                             Go to website
                         </Link>

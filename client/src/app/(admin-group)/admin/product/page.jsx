@@ -120,7 +120,7 @@ export default async function ProductPage() {
                                 <div className="flex min-w-0 items-center gap-3">
                                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
                                         <img src={buildImageUrl(image_path, prod.image_name)} alt={prod.name} className="h-full w-full object-cover" />
-                                    </div>
+                                    </div> 
                                     <div className="min-w-0">
                                         <h2 className="truncate text-base font-bold text-slate-950 sm:text-lg">{prod.name}</h2>
                                         <p className="mt-1 text-xs text-slate-500">SKU: {prod.sku_id || "-"}</p>
@@ -128,7 +128,7 @@ export default async function ProductPage() {
                                     </div>
                                 </div>
 
-                                <div className="flex shrink-0 items-center gap-2">
+                                <div className="flex flex-col sm:flex-row  shrink-0 items-center  gap-2">
                                     <DeleteBtn delete_url={`/product/delete/${prod._id}`} />
                                     <Link href={`/admin/product/edit/${prod._id}`} className="admin-icon-btn"><FaPen size={14} /></Link>
                                     <MultipleImage delete_url={`/product/delete-other-image/${prod._id}/`} api_url={`/product/add-other-images/${prod._id}`} other_images={prod.other_images} image_url={otherImageBaseUrl} />

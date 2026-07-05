@@ -1,4 +1,3 @@
-const unstable_cacheTagserModel = require("../models/UserModel");
 const { message } = require("../library/helper");
 const UserModel = require("../models/UserModel");
 
