@@ -56,15 +56,15 @@ export default function Footer() {
                     <div>
                         <h3 className="text-sm font-semibold text-slate-950">Contact</h3>
                         <div className="mt-4 flex flex-col gap-3 text-sm text-slate-500">
-                            <span className="flex items-center gap-2"><Mail size={15} /> support@ishop.com</span>
-                            <span className="flex items-center gap-2"><Phone size={15} /> +91 8852968227</span>
-                            <span className="flex items-center gap-2"><MapPin size={15} /> Jaipur, India</span>
+                            <span className="flex items-center gap-2 hover:text-slate-950"><Mail size={15} /> support@ishop.com</span>
+                            <span className="flex items-center gap-2 hover:text-slate-950"><Phone size={15} /> +91 8852968227</span>
+                            <span className="flex items-center gap-2 hover:text-slate-950"><MapPin size={15} /> Jaipur, India</span>
                         </div>
                     </div>
                 </div>
 
                 {/* bottom line footer  */}
-                <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500">
+                <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-500 hover:text-slate-950">
                     © {year} iShop| Designed & Built by Bhawani Singh 
                 </div>
             </div>
