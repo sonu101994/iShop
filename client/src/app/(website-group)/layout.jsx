@@ -1,6 +1,5 @@
 import Header from "@/components/website/common/Header";
-import Footer
- from "@/components/website/common/Footer";
+import Footer from "@/components/website/common/Footer";
 
 export default function WebsiteLayout({ children }) {
     return (

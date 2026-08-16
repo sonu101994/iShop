@@ -7,7 +7,6 @@ import { getProduct } from "@/library/api-call";
 import ProductCard from "./ProductCard";
 
 export default function FeaturedProducts() {
-    // homepage par sirf admin marked featured products show karne ke liye local list rakhte hain
     const [products, setProducts] = useState([]);
     const [imagePath, setImagePath] = useState("");
     const [loading, setLoading] = useState(true);

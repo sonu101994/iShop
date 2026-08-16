@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { ArrowRight } from "lucide-react";
-import WebsiteLayout from './../../../(website-group)/layout';
 
 
 // admin login page
@@ -15,7 +14,7 @@ export default function AdminLoginPage() {
     const dispatcher = useDispatch();
 
     const submitHandler = async (e) => {
-        console.log("form submit");
+        // console.log("form submit");
         e.preventDefault();
         const data = {
             email: e.target.email.value,
@@ -25,12 +24,12 @@ export default function AdminLoginPage() {
         try {
             const response = await apiClient.post("/admin/login", data);
 
-            console.log(response.data);
+            // console.log(response.data);
 
             if (response.data.flag == 1) {
                 const admin_data = response.data.admin;
                 const admin_token = response.data.token;
-                console.log(admin_token, admin_data);
+                // console.log(admin_token, admin_data);
 
                 dispatcher(loginAdmin(
                     {
@@ -50,10 +49,10 @@ export default function AdminLoginPage() {
             }
         } catch (error) {
 
-              console.log("FULL ERROR:", error);
-    console.log("RESPONSE:", error.response);
-    console.log("DATA:", error.response?.data);
-            console.log(error);
+            //   console.log("FULL ERROR:", error);
+    // console.log("RESPONSE:", error.response);
+    // console.log("DATA:", error.response?.data);
+            // console.log(error);
             toast.error("Something went wrong");
 
         }
@@ -123,7 +122,7 @@ export default function AdminLoginPage() {
 
                     </form>
                 
-                        <Link href="/"  className="flex  justify-center align-center gap-2  mt-2 bg-blue-500 text-white font-semibold px-4 py-2 w-full  rounded-lg">
+                        <Link href="/"  className="flex  justify-center items-center gap-2  mt-2 bg-blue-500 text-white font-semibold px-4 py-2 w-full  rounded-lg">
                                 <span>  Go To Website</span>
                              <ArrowRight size={16} className="self-center" />
                         </Link>

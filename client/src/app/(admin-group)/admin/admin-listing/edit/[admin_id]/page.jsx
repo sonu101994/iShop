@@ -22,7 +22,7 @@ export default function EditAdminPage() {
                 toast.error(response.data.msg);
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             toast.error("Error fetching admin");
         } finally {
             setLoading(false);

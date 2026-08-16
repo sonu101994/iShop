@@ -2,7 +2,7 @@ import AuthLayout from "@/components/website/auth/AuthLayout";
 import LoginForm from "@/components/website/auth/LoginForm";
 
 const LoginPage = () => {
-// login page
+    // login page
     return (
         <AuthLayout
             title="Welcome Back"

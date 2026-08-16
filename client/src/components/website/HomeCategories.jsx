@@ -7,7 +7,6 @@ import { getCategory, getProduct } from "@/library/api-call";
 import { buildImageUrl } from "@/library/helper";
 
 export default function HomeCategories() {
-    // category cards ke saath image path aur loading state section ke andar manage hoti hai
     const [categories, setCategories] = useState([]);
     const [imagePath, setImagePath] = useState("");
     const [loading, setLoading] = useState(true);
@@ -21,7 +20,6 @@ export default function HomeCategories() {
         setLoading(true);
 
         try {
-            // pehle on-home categories lete hain, fallback ke liye all active categories bhi lete hain
             const homeData = await getCategory({ status: true, on_home: true });
             const activeData = await getCategory({ status: true });
 
@@ -37,7 +35,7 @@ export default function HomeCategories() {
             (homeData.categories || []).forEach(addCategory);
             (activeData.categories || []).forEach(addCategory);
 
-            // homepage layout clean=>>usin g slice for only 4 cat
+            // homepage layout clean=>>using slice for only 4 cat
             const visibleCategories = merged.slice(0, 4);
             const categoriesWithCounts = await Promise.all(
                 visibleCategories.map(async (category) => {

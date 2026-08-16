@@ -46,7 +46,7 @@ export default function OrderPage() {
                 toast.error(response.data.msg || "Status update failed");
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             toast.error("Update failed");
         } finally {
             setUpdating("");

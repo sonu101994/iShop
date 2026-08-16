@@ -31,7 +31,7 @@ export default function OrderDetailsPage() {
                 toast.error(response.data.msg);
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             toast.error("Failed to fetch order");
         }
     };

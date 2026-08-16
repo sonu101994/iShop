@@ -137,7 +137,6 @@ const getProducts = async (req, res) => {
         // =========================
         // ✅ COLOR FILTER (MULTI SAFE)
         // =========================
-        
         if (query.color_id) {
             const colorIds = String(query.color_id).split(",");
             filter.color_ids = { $in: colorIds };

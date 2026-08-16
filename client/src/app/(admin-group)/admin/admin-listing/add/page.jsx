@@ -20,7 +20,7 @@ export default function AddAdminPage() {
                 toast.error(response.data.msg || "Could not create admin");
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             toast.error("Server error");
         }
     };
@@ -57,7 +57,7 @@ export default function AddAdminPage() {
                             <option value={2}>Manager</option>
                         </select>
                     </div>
-                    <button className="admin-primary-btn w-full">Create Admin</button>
+                    <button type="submit" className="admin-primary-btn w-full">Create Admin</button>
                 </form>
             </div>
         </div>

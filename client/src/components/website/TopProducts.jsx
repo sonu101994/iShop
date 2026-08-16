@@ -7,7 +7,6 @@ import { getProduct } from "@/library/api-call";
 import ProductCard from "./ProductCard";
 
 export default function TopProducts() {
-    // admin marked top products ko homepage ke alag section me show karte hain
     const [products, setProducts] = useState([]);
     const [imagePath, setImagePath] = useState("");
     const [loading, setLoading] = useState(true);

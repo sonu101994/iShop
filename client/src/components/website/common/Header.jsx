@@ -20,7 +20,6 @@ export default function Header() {
     const cartCount = useSelector((state) => state.cart?.cartCount || 0);
 
     useEffect(() => {
-        // hyest cart
         dispatch(lsToUser());
         dispatch(restoreCart());
         setAdminToken(localStorage.getItem("admin_token") || "");
@@ -28,7 +27,7 @@ export default function Header() {
 
     useEffect(() => {
         let active = true;
-// after login token||login user
+        // after login token||login user
         const syncServerCart = async () => {
             
             if (!token) return;

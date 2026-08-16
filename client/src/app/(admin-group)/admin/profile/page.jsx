@@ -42,7 +42,7 @@ export default function AdminProfilePage() {
                 toast.error(response.data.msg);
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             toast.error("password change failed");
         }
     };

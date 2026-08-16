@@ -36,12 +36,12 @@ export default function AdminListingPage(){
                 toast.success(response.data.msg || "Updated");
                 fetchAdmins();
             } else {
-                console.log("hitting");
+                // console.log("hitting");
                 toast.error(response.data.msg);
             }
 
         } catch (error) {
-            console.log("hitting");
+            // console.log("hitting");
               toast.error("Server error");
         }
     };
